@@ -4,23 +4,6 @@
 
 Aplicativo mobile desenvolvido em **React Native com Expo** para o sistema de blog acadêmico da Pós-Tech FIAP. Este projeto representa a Fase 4 do Tech Challenge, complementando o back-end (Fase 2) e o front-end web (Fase 3).
 
----
-
-## 📋 Índice
-
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Arquitetura](#arquitetura)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação e Execução](#instalação-e-execução)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Autenticação](#autenticação)
-- [Screenshots](#screenshots)
-- [Desafios e Soluções](#desafios-e-soluções)
-- [Próximos Passos](#próximos-passos)
-
----
 
 ## 📖 Sobre o Projeto
 
@@ -264,6 +247,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 🔗 Links Relacionados
 
-- [Fase 2 - Back-end](https://github.com/IcaroRP/pos-tech-challenge-fase-2)
-- [Fase 3 - Front-end Web](https://github.com/IcaroRP/pos-tech-challenge-fase-3)
-Interface mobile para um blog educacional, desenvolvido para a disciplina de Mobile da Pós-Tech FIAP.
+- [Fase 2 - API- Back-end](https://github.com/IcaroBossi/pos-tech-challenge-fase-2)
+- [Fase 3 - Front-end Web](https://github.com/IcaroBossi/pos-tech-challenge-fase-3)
