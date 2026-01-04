@@ -110,103 +110,41 @@ export const postsApi = {
 };
 
 // ==================== PROFESSORES API ====================
-// Nota: Estes endpoints podem não existir no back-end original
-// Implementados para atender aos requisitos do projeto
 
 export const professoresApi = {
   // Listar todos os professores
   getAllProfessores: async (page = 1, limit = 10): Promise<ProfessoresResponse> => {
-    try {
-      const params = new URLSearchParams({
-        page: page.toString(),
-        limit: limit.toString(),
-      });
+    const params = new URLSearchParams({
+      page: page.toString(),
+      limit: limit.toString(),
+    });
 
-      const response = await api.get(`/professores?${params.toString()}`);
-      return response.data;
-    } catch (error) {
-      // Retorna dados mockados se o endpoint não existir
-      return {
-        sucesso: true,
-        dados: getMockProfessores(),
-        paginacao: {
-          paginaAtual: page,
-          totalPaginas: 1,
-          totalPosts: 3,
-          postsPorPagina: 3,
-        },
-      };
-    }
+    const response = await api.get(`/professores?${params.toString()}`);
+    return response.data;
   },
 
   // Buscar professor por ID
   getProfessorById: async (id: string): Promise<ApiResponse<Professor>> => {
-    try {
-      const response = await api.get(`/professores/${id}`);
-      return response.data;
-    } catch (error) {
-      const mockProfessores = getMockProfessores();
-      const professor = mockProfessores.find(p => p._id === id);
-      return {
-        sucesso: !!professor,
-        dados: professor,
-        mensagem: professor ? undefined : 'Professor não encontrado',
-      };
-    }
+    const response = await api.get(`/professores/${id}`);
+    return response.data;
   },
 
   // Criar professor
   createProfessor: async (professor: CreateProfessorRequest): Promise<ApiResponse<Professor>> => {
-    try {
-      const response = await api.post('/professores', professor);
-      return response.data;
-    } catch (error) {
-      // Simula criação
-      return {
-        sucesso: true,
-        mensagem: 'Professor criado com sucesso (simulado)',
-        dados: {
-          _id: Date.now().toString(),
-          ...professor,
-          dataCriacao: new Date().toISOString(),
-          dataAtualizacao: new Date().toISOString(),
-        },
-      };
-    }
+    const response = await api.post('/professores', professor);
+    return response.data;
   },
 
   // Atualizar professor
   updateProfessor: async (id: string, professor: UpdateProfessorRequest): Promise<ApiResponse<Professor>> => {
-    try {
-      const response = await api.put(`/professores/${id}`, professor);
-      return response.data;
-    } catch (error) {
-      return {
-        sucesso: true,
-        mensagem: 'Professor atualizado com sucesso (simulado)',
-        dados: {
-          _id: id,
-          nome: professor.nome || 'Professor',
-          email: professor.email || 'professor@email.com',
-          disciplina: professor.disciplina,
-          dataCriacao: new Date().toISOString(),
-          dataAtualizacao: new Date().toISOString(),
-        },
-      };
-    }
+    const response = await api.put(`/professores/${id}`, professor);
+    return response.data;
   },
 
   // Deletar professor
   deleteProfessor: async (id: string): Promise<ApiResponse<null>> => {
-    try {
-      const response = await api.delete(`/professores/${id}`);
-      return response.data;
-    } catch (error) {
-      return {
-        sucesso: true,
-        mensagem: 'Professor removido com sucesso (simulado)',
-      };
-    }
+    const response = await api.delete(`/professores/${id}`);
+    return response.data;
   },
 };
 
@@ -215,154 +153,38 @@ export const professoresApi = {
 export const alunosApi = {
   // Listar todos os alunos
   getAllAlunos: async (page = 1, limit = 10): Promise<AlunosResponse> => {
-    try {
-      const params = new URLSearchParams({
-        page: page.toString(),
-        limit: limit.toString(),
-      });
+    const params = new URLSearchParams({
+      page: page.toString(),
+      limit: limit.toString(),
+    });
 
-      const response = await api.get(`/alunos?${params.toString()}`);
-      return response.data;
-    } catch (error) {
-      // Retorna dados mockados se o endpoint não existir
-      return {
-        sucesso: true,
-        dados: getMockAlunos(),
-        paginacao: {
-          paginaAtual: page,
-          totalPaginas: 1,
-          totalPosts: 3,
-          postsPorPagina: 3,
-        },
-      };
-    }
+    const response = await api.get(`/alunos?${params.toString()}`);
+    return response.data;
   },
 
   // Buscar aluno por ID
   getAlunoById: async (id: string): Promise<ApiResponse<Aluno>> => {
-    try {
-      const response = await api.get(`/alunos/${id}`);
-      return response.data;
-    } catch (error) {
-      const mockAlunos = getMockAlunos();
-      const aluno = mockAlunos.find(a => a._id === id);
-      return {
-        sucesso: !!aluno,
-        dados: aluno,
-        mensagem: aluno ? undefined : 'Aluno não encontrado',
-      };
-    }
+    const response = await api.get(`/alunos/${id}`);
+    return response.data;
   },
 
   // Criar aluno
   createAluno: async (aluno: CreateAlunoRequest): Promise<ApiResponse<Aluno>> => {
-    try {
-      const response = await api.post('/alunos', aluno);
-      return response.data;
-    } catch (error) {
-      // Simula criação
-      return {
-        sucesso: true,
-        mensagem: 'Aluno criado com sucesso (simulado)',
-        dados: {
-          _id: Date.now().toString(),
-          ...aluno,
-          dataCriacao: new Date().toISOString(),
-          dataAtualizacao: new Date().toISOString(),
-        },
-      };
-    }
+    const response = await api.post('/alunos', aluno);
+    return response.data;
   },
 
   // Atualizar aluno
   updateAluno: async (id: string, aluno: UpdateAlunoRequest): Promise<ApiResponse<Aluno>> => {
-    try {
-      const response = await api.put(`/alunos/${id}`, aluno);
-      return response.data;
-    } catch (error) {
-      return {
-        sucesso: true,
-        mensagem: 'Aluno atualizado com sucesso (simulado)',
-        dados: {
-          _id: id,
-          nome: aluno.nome || 'Aluno',
-          email: aluno.email || 'aluno@email.com',
-          turma: aluno.turma,
-          dataCriacao: new Date().toISOString(),
-          dataAtualizacao: new Date().toISOString(),
-        },
-      };
-    }
+    const response = await api.put(`/alunos/${id}`, aluno);
+    return response.data;
   },
 
   // Deletar aluno
   deleteAluno: async (id: string): Promise<ApiResponse<null>> => {
-    try {
-      const response = await api.delete(`/alunos/${id}`);
-      return response.data;
-    } catch (error) {
-      return {
-        sucesso: true,
-        mensagem: 'Aluno removido com sucesso (simulado)',
-      };
-    }
+    const response = await api.delete(`/alunos/${id}`);
+    return response.data;
   },
 };
-
-// ==================== DADOS MOCKADOS ====================
-
-const getMockProfessores = (): Professor[] => [
-  {
-    _id: '1',
-    nome: 'Prof. Maria Silva',
-    email: 'maria@escola.com',
-    disciplina: 'Matemática',
-    dataCriacao: new Date().toISOString(),
-    dataAtualizacao: new Date().toISOString(),
-  },
-  {
-    _id: '2',
-    nome: 'Prof. João Santos',
-    email: 'joao@escola.com',
-    disciplina: 'História',
-    dataCriacao: new Date().toISOString(),
-    dataAtualizacao: new Date().toISOString(),
-  },
-  {
-    _id: '3',
-    nome: 'Prof. Ana Costa',
-    email: 'ana@escola.com',
-    disciplina: 'Biologia',
-    dataCriacao: new Date().toISOString(),
-    dataAtualizacao: new Date().toISOString(),
-  },
-];
-
-const getMockAlunos = (): Aluno[] => [
-  {
-    _id: '1',
-    nome: 'Pedro Oliveira',
-    email: 'pedro@aluno.com',
-    turma: '3º Ano A',
-    dataCriacao: new Date().toISOString(),
-    dataAtualizacao: new Date().toISOString(),
-  },
-  {
-    _id: '2',
-    nome: 'Julia Mendes',
-    email: 'julia@aluno.com',
-    turma: '2º Ano B',
-    dataCriacao: new Date().toISOString(),
-    dataAtualizacao: new Date().toISOString(),
-  },
-  {
-    _id: '3',
-    nome: 'Lucas Ferreira',
-    email: 'lucas@aluno.com',
-    turma: '1º Ano C',
-    dataCriacao: new Date().toISOString(),
-    dataAtualizacao: new Date().toISOString(),
-  },
-];
 
 export default api;
