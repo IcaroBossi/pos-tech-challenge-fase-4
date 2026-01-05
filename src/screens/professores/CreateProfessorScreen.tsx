@@ -53,16 +53,21 @@ const CreateProfessorScreen: React.FC = () => {
       const response = await professoresApi.createProfessor(professorData);
 
       if (response.sucesso) {
-        Alert.alert(
-          'Sucesso!',
-          'Professor cadastrado com sucesso!',
-          [
-            {
-              text: 'OK',
-              onPress: () => navigation.goBack(),
-            },
-          ]
-        );
+        if (Platform.OS === 'web') {
+          window.alert('Professor cadastrado com sucesso!');
+          navigation.goBack();
+        } else {
+          Alert.alert(
+            'Sucesso!',
+            'Professor cadastrado com sucesso!',
+            [
+              {
+                text: 'OK',
+                onPress: () => navigation.goBack(),
+              },
+            ]
+          );
+        }
       } else {
         setSubmitError(response.mensagem || 'Erro ao cadastrar professor');
       }

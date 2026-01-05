@@ -53,16 +53,21 @@ const CreateAlunoScreen: React.FC = () => {
       const response = await alunosApi.createAluno(alunoData);
 
       if (response.sucesso) {
-        Alert.alert(
-          'Sucesso!',
-          'Aluno cadastrado com sucesso!',
-          [
-            {
-              text: 'OK',
-              onPress: () => navigation.goBack(),
-            },
-          ]
-        );
+        if (Platform.OS === 'web') {
+          window.alert('Aluno cadastrado com sucesso!');
+          navigation.goBack();
+        } else {
+          Alert.alert(
+            'Sucesso!',
+            'Aluno cadastrado com sucesso!',
+            [
+              {
+                text: 'OK',
+                onPress: () => navigation.goBack(),
+              },
+            ]
+          );
+        }
       } else {
         setSubmitError(response.mensagem || 'Erro ao cadastrar aluno');
       }
