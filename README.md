@@ -238,6 +238,10 @@ O sistema utiliza autenticação simulada (mock) com dois perfis de usuário:
 **Desafio**: Garantir boa experiência em diferentes tamanhos de tela.
 **Solução**: Sistema de design tokens e StyleSheet flexível.
 
+### 4. Integração com API
+**Desafio**: Endpoints para professores e alunos não disponíveis no back-end original.
+**Solução**: Implementação de novos endpoints na api.
+
 
 ## 📄 Licença
 
