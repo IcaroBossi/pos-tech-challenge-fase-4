@@ -95,16 +95,21 @@ const EditProfessorScreen: React.FC = () => {
       const response = await professoresApi.updateProfessor(professorId, updateData);
 
       if (response.sucesso) {
-        Alert.alert(
-          'Sucesso!',
-          'Professor atualizado com sucesso!',
-          [
-            {
-              text: 'OK',
-              onPress: () => navigation.goBack(),
-            },
-          ]
-        );
+        if (Platform.OS === 'web') {
+          window.alert('Professor atualizado com sucesso!');
+          navigation.goBack();
+        } else {
+          Alert.alert(
+            'Sucesso!',
+            'Professor atualizado com sucesso!',
+            [
+              {
+                text: 'OK',
+                onPress: () => navigation.goBack(),
+              },
+            ]
+          );
+        }
       } else {
         setSubmitError(response.mensagem || 'Erro ao atualizar professor');
       }
