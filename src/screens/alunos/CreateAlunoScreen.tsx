@@ -156,7 +156,7 @@ const CreateAlunoScreen: React.FC = () => {
               render={({ field: { onChange, onBlur, value } }) => (
                 <Input
                   label="Turma (opcional)"
-                  placeholder="Ex: 3º Ano A, 2º Ano B, etc."
+                  placeholder="Ex: 5FSDT"
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
