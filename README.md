@@ -89,6 +89,7 @@ Antes de começar, você precisa ter instalado:
 - **Android Studio** com Android SDK (para Android)
 - **Xcode** (para iOS - apenas macOS)
 
+Também é necessário que o back-end da aplicação esteja rodando (pos-tech-challenge-fase-2)
 ---
 
 ## 🚀 Instalação e Execução
@@ -121,7 +122,10 @@ API_BASE_URL=http://localhost:3000
 # Para Android Emulator, use: http://10.0.2.2:3000
 ```
 
-### 4. Execute o projeto
+### 4. Inicie o back-end
+Certifique-se de que o back-end (pos-tech-challenge-fase-2) está rodando.
+
+### 5. Execute o projeto
 
 ```bash
 # Iniciar o Expo
@@ -134,7 +138,7 @@ npx expo start --android
 npx expo start --ios
 ```
 
-### 5. Escaneie o QR Code
+### 6. Escaneie o QR Code
 
 Use o aplicativo **Expo Go** no seu dispositivo para escanear o QR Code exibido no terminal.
 
