@@ -89,7 +89,7 @@ Antes de começar, você precisa ter instalado:
 - **Android Studio** com Android SDK (para Android)
 - **Xcode** (para iOS - apenas macOS)
 
-Também é necessário que o back-end da aplicação esteja rodando (pos-tech-challenge-fase-2)
+### Também é necessário que o back-end da aplicação esteja rodando (pos-tech-challenge-fase-2)
 ---
 
 ## 🚀 Instalação e Execução
